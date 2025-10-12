@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* GCS Dark Theme - Mission Critical Design */
+    --background: 220 25% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Deep navy primary with cyan accents */
+    --primary: 210 85% 45%;
+    --primary-foreground: 210 20% 98%;
+    --primary-glow: 190 85% 60%;
+
+    /* Status colors */
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 20% 95%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 210 20% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 25% 8%;
+
+    --danger: 0 84% 55%;
+    --danger-foreground: 210 20% 98%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 210 10% 60%;
+
+    --accent: 190 85% 50%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 18%;
+    --ring: 190 85% 50%;
+
+    --radius: 0.5rem;
+
+    /* Gradients for technical feel */
+    --gradient-primary: linear-gradient(135deg, hsl(210 85% 45%), hsl(190 85% 60%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 25% 8%), hsl(220 30% 6%));
+    --gradient-glow: linear-gradient(90deg, hsl(190 85% 50% / 0.1), hsl(210 85% 45% / 0.1));
+
+    /* Shadows with glow effects */
+    --shadow-glow: 0 0 30px hsl(190 85% 50% / 0.15);
+    --shadow-card: 0 4px 20px hsl(220 30% 4% / 0.4);
+
+    /* Sidebar colors */
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 210 85% 45%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 190 85% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
