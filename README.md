@@ -42,8 +42,8 @@ visual feedback, enhancing the user’s situational
 awareness and operational control.
 
 # Functional Demonstration Videos
-- GCS Software Demo
-- AI Models Direct Demo
+- [GCS Software Demo](https://drive.google.com/file/d/1Ah4FTRQZ4lwZbvqbmMLmGI83oVgj07mk/view?usp=sharing)
+- [AI Models Direct Demo](https://drive.google.com/file/d/1L9hH52IYlkLTYhsuxp2aE-_hITkgeFdm/view?usp=sharing)
 
 # User Workflow
 This below image is our Workflow basically.
