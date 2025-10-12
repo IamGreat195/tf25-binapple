@@ -1,5 +1,5 @@
 # AgriDrone GCS
-<img width="120" height="" alt="image" src="https://github.com/user-attachments/assets/79d35a84-2711-4989-9215-1b5c0dafd018" />
+<img width="120" height="" alt="Logo" src="https://github.com/user-attachments/assets/a9d19ff0-1949-4d5f-a86a-f18e146415d8" />
 
 This project is built for Transfinitte '25 - Problem Statement by ZeroWings company.
 This README explains our project entirely. Please bare with me.
@@ -47,48 +47,48 @@ awareness and operational control.
 
 # User Workflow
 This below image is our Workflow basically.
-<img width="1443" height="728" alt="Workflow" src="https://github.com/user-attachments/assets/ac8dbffc-ab08-4d46-8e42-c2131e1d6aa9" />
+<img width="1443" height="728" alt="Workflow" src="https://github.com/user-attachments/assets/8dde3356-19d0-45d2-b813-adf9db66f378" />
+
 
 # Solution Explaination
 We used a SaaS starter template to get us started with using Vite React for Frontend, Express (+ Socket.io) for Backend and PostgreSQL (supabase) for the database part.
 
 1. Farmers or Admins first login using Email/Password with Email OTP Confirmation (Supabase Auth)
-<img width="280" height="" alt="image" src="https://github.com/user-attachments/assets/a1ac44e4-e193-4097-b56c-3af130ca1971" />
+<img width="280" height="" alt="Auth" src="https://github.com/user-attachments/assets/8c26dc23-4ef9-40bd-a079-6ec1dda2cae0" />
 
 
-2. Dashboard for quick overview of the missions and fields.
-<img width="860" height="" alt="Dashboard Overview" src="https://github.com/user-attachments/assets/f9c85170-68bc-4daa-9dac-215e05f7c50c" />
+3. Dashboard for quick overview of the missions and fields.
+<img width="860" height="" alt="Dashboard Overview" src="https://github.com/user-attachments/assets/a5f830cb-740a-4e4e-83ab-d6a7226fb18e" />
 
 
-3. Farmers create a _Field_ 
-<img width="740" height="778" alt="Field Creation" src="https://github.com/user-attachments/assets/d57714dc-dc1b-4e91-8dd9-e17e1921c225" />
+4. Farmers create a _Field_
+<img width="740" height="778" alt="Field Creation" src="https://github.com/user-attachments/assets/d49537c3-31d2-486c-b2e3-902d6d90eb01" />
 
 
-4. Farmers create a mission that is executed on the Field by drawing pathlines
+5. Farmers create a mission that is executed on the Field by drawing pathlines
 There's a lot of improvements possible here:
 - Support for pre-made algorithms for covering whole area (TODO: Research on such algorithms)
 - Support Options for One-way or Two-way options, or repeat daily / custom time period feature.
 - Support Curved Lines (this is actually completed, its just one-line change)
-<img width="600" height="" alt="Mission creation" src="https://github.com/user-attachments/assets/bb81bf8d-1e40-4d23-bba4-67fb4f4c2d60" />
+<img width="600" height="" alt="Mission Creation" src="https://github.com/user-attachments/assets/d42e9b89-c58c-4406-abdf-8ce20d0299e6" />
 
 
-5. Mission Dashboard: Assign a drone that is online currently. State Management of Drones using Web Sockets is perfectly handled.
-<img width="740" height="" alt="Missionn Dashboard" style="display:inline;" src="https://github.com/user-attachments/assets/387045aa-252b-4901-a7e3-9545d6e450b0" />
-<img width="150" height="" alt="Online Drones" style="display:inline;" src="https://github.com/user-attachments/assets/9a43b37e-6920-4d79-8e6f-21deba1cc65b" />
+6. Mission Dashboard: Assign a drone that is online currently. State Management of Drones using Web Sockets is perfectly handled.
+<img width="740" height="" alt="Mission Dashboard" src="https://github.com/user-attachments/assets/20ad2de9-3577-47a9-82ce-78f3cfb7a8a8" />
+<img width="150" height="" alt="Online Drones" src="https://github.com/user-attachments/assets/ce431ede-b8fa-47a6-b4e0-cc26f6eae30c" />
 
 
-6. Drone Simulation
+7. Drone Simulation
 A drone simulator is just a NodeJS script that makes a websocket connection the backend and starts communicating with it.
 Whenever a drone comes online / goes offline, everything is reactive at the dashboard.
-<img width="640" height="403" alt="Telemetry" src="https://github.com/user-attachments/assets/e4a9ccdc-0d1d-4cd2-89d9-479584a23166" />
+<img width="419" height="" alt="Drone Simulation" src="https://github.com/user-attachments/assets/104a53aa-c03f-46ce-aade-c8b4d7a43b99" />
+
+8. Live Telemetry using Websockets and Progress Calculation. THERE'S ALSO AI/ML Telemetry Processing that gives us Yield Prediction, Disease Identification and Weed Identification. **A seperate section is dedicated to this.**
+<img width="419" height="343" alt="Telemetry" src="https://github.com/user-attachments/assets/b79cccc5-3cc1-4743-a408-aa771075e503" />
+<img width="717" height="398" alt="Live Motion" src="https://github.com/user-attachments/assets/bd4a91e8-3f8d-45e0-bdc6-8ba1fc785446" />
 
 
-7. Live Telemetry using Websockets and Progress Calculation. THERE'S ALSO AI/ML Telemetry Processing that gives us Yield Prediction, Disease Identification and Weed Identification. **A seperate section is dedicated to this.**
-<img width="717" height="398" alt="Live Motion" src="https://github.com/user-attachments/assets/908104f5-aa68-4bf5-84e4-09322657e85e" />
-<img width="424" height="652" alt="Controls and Progress" src="https://github.com/user-attachments/assets/9b00c502-50ec-4323-85b5-a170384d0dcb" />
-
-
-8. Post-Mission Completion Report Generation.
+12. Post-Mission Completion Report Generation.
 All the telemetry data (which is generated every 2 seconds and also given the ML models) is stored in a PostgreSQL database batch-wise, and latest few telemtry is stored in memory (Redis) for fast-access.
 The data can be made of use to **Generate Meaning Full Reports**. Following is the Schema of the Telemetry data available. 
 We didn't have the chance to complete report generation within the given time.
@@ -116,8 +116,8 @@ We didn't have the chance to complete report generation within the given time.
 - Masking, Segmentation, Miou Calculation, Fine Tuning Unet
 - Optimizer - Adam (with scheduler)
 - loss_fn -BCE + Dice loss
- 
-<img width="800" height="" alt="image" src="https://github.com/user-attachments/assets/81e3f22e-75b2-43e1-a305-39dbe0ada1a3" />
+
+<img width="800" height="" alt="Weed detection" src="https://github.com/user-attachments/assets/44771b74-038e-442d-90e9-a8b3b7a9666e" />
 
 Basically to train our model we’ve got the ground
 truth values where weeds reside, and we train our
@@ -140,7 +140,7 @@ predictions and optimizes our model.
 - Canopy features
 - Environment AI features
 
-<img width="400" height="" alt="image" src="https://github.com/user-attachments/assets/03941583-c73b-4cb2-a61b-4ec6cdeae319" />
+<img width="400" height="" alt="Weed plot" src="https://github.com/user-attachments/assets/6506e36a-610b-4fef-a282-898a9a4dd0da" />
 
 We use the same weed prediction dataset but apply green-value masking to get total vegetative cover. Subtracting weed cover gives crop cover. Since the dataset lacks yield data and the regression dataset lacks imagery, direct combination isn’t feasible. We estimate yield from canopy features, train a regression model on environmental data, then reapply it with canopy features. The two yield estimates are combined via weighted averaging for a balanced approximation.
 
